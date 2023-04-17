@@ -1,5 +1,10 @@
-export default function createIteratorObject(report) {
-  while (report) {
-    console.log('Placeholder');
-  }
+export default function createReportObject(employeesList) {
+  return {
+    allEmployees: {
+      ...employeesList,
+    },
+    getNumberOfDepartments(employeesList) {
+      return Object.keys(employeesList).length;
+    },
+  };
 }
