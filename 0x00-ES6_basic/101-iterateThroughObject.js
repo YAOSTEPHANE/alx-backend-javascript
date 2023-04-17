@@ -1,12 +1,5 @@
 export default function iterateThroughObject(reportWithIterator) {
-
- }
-{
-  allEmployees: {
-     engineering: [
-          'John Doe',
-          'Guillaume Salva',
-     ],
-  },
-  ...
-};
+  if (!reportWithIterator) {
+    console.log('Placeholder');
+  }
+}
