@@ -1,17 +1,17 @@
 /**
- * Récupère les étudiants dans un endroit donné.
+ * Retrieves students in a given location.
  * @param {{
- * id: Numéro,
- * prénom : chaîne,
- * emplacement: String
- * }[]} students - La liste des étudiants.
- * @param {String} city - L’emplacement.
+ *   id: Number,
+ *   firstName: String,
+ *   location: String
+ * }[]} students - The list of students.
+ * @param {String} city - The location.
  * @author Bezaleel Olakunori <https://github.com/B3zaleel>
  * @returns
  */
-exporter la fonction par défaut getStudentsByLocation(students, city) {
-  if (student instanceof Array) {
-    les étudiants de retour. filter((étudiant) => élève. Localisation === Ville);
+export default function getStudentsByLocation(students, city) {
+  if (students instanceof Array) {
+    return students.filter((student) => student.location === city);
   }
-  rendre [];
+  return [];
 }
