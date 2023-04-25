@@ -1,16 +1,17 @@
+
 /**
- * Modifie la quantité d’articles d’épicerie uniques à 100.
- * @param {Map<String, number>} map - Une carte du nom d’un
- * l’épicerie et sa quantité.
- * @author Bezaleel Olakunori <https://github.com/B3zaleel>
+ * Changes the quantity of unique grocery items to 100.
+ * @param {Map<String, number>} map - A map of the name of a
+ * grocery and its quantity.
+ * @author YAO KOUASSI STÉPHANE <https://github.com/YAOSTEPHANE>
  */
-export par défaut  fonction updateUniqueItems(map) {
-  Si (! (instance de cartede  Map)) {
+export default function updateUniqueItems(map) {
+  if (!(map instanceof Map)) {
     throw new Error('Cannot process');
   }
-  carte. forEach((valeur, clé) => {
-    if (valeur === 1) {
-      carte. set(clé, 100);
+  map.forEach((value, key) => {
+    if (value === 1) {
+      map.set(key, 100);
     }
   });
 }
