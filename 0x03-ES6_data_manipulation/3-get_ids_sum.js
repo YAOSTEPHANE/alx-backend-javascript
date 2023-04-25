@@ -1,19 +1,19 @@
 /**
- * Récupère la somme des identifiants d’une liste d’étudiants.
+ * Retrieves the sum of ids of a list of students.
  * @param {{
- * id: Numéro,
- * prénom : chaîne,
- * emplacement: String
- * }[]} students - La liste des étudiants.
- * @author Bezaleel Olakunori <https://github.com/B3zaleel>
- * @returns {Nombre}
+ *   id: Number,
+ *   firstName: String,
+ *   location: String
+ * }[]} students - The list of students.
+ * @author YAO KOUASSI STÉPHANE <https://github.com/YAOSTEPHANE>
+ * @returns {Number}
  */
-export par défaut  de la fonction getStudentIdsSum(students) {
-  if (student instanceof Array) {
-    les étudiants de retour. réduire(
-      (prevStudent, curStudent) => prevStudent. Identifiant ||  prevStudent + curStudent. ID,
+export default function getStudentIdsSum(students) {
+  if (students instanceof Array) {
+    return students.reduce(
+      (prevStudent, curStudent) => prevStudent.id || prevStudent + curStudent.id,
       0,
     );
   }
-  retour 0;
+  return 0;
 }
