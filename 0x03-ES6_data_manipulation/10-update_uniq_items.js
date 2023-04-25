@@ -1,17 +1,13 @@
+export const weakMap = new WeakMap();
 
-/**
- * Changes the quantity of unique grocery items to 100.
- * @param {Map<String, number>} map - A map of the name of a
- * grocery and its quantity.
- * @author YAO KOUASSI STÉPHANE <https://github.com/YAOSTEPHANE>
- */
-export default function updateUniqueItems(map) {
-  if (!(map instanceof Map)) {
-    throw new Error('Cannot process');
+const MAX_ENDPOINT_CALLS = 5;
+
+export function queryAPI(endpoint) {
+  if (!weakMap.has(endpoint)) {
+    weakMap.set(endpoint, 0);
   }
-  map.forEach((value, key) => {
-    if (value === 1) {
-      map.set(key, 100);
-    }
-  });
+  weakMap.set(endpoint, weakMap.get(endpoint) + 1);
+  if (weakMap.get(endpoint) >= MAX_ENDPOINT_CALLS) {
+    throw new Error('Endpoint load is high');
+  }
 }
